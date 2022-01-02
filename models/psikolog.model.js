@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
 const psikologSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-        },
-        description: {
-            type: String,
-        },
-        photo: {
-            type: String, 
-        },
-        keahlian: {
-            type: [String],
-        },
-        testimoni: {
-            type: [String], 
-        }
+  {
+    name: {
+      type: String,
     },
-    { timestamps:true }
+    profile: {
+      type: String,
+    },
+    keahlian: {
+      type: [String],
+    },
+    keahlian_lain: {
+      type: [String],
+    },
+    pendekatan_terapi: {
+      type: [String],
+    },
+  },
+  { timestamps: true }
 );
 
 // create new model (nameCollection, nameSchema)
