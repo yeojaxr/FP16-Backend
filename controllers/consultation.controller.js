@@ -3,16 +3,15 @@ const ConsultationModel = require("../models/consultation.model");
 class ConsultationController {
   static async createNewConsultation(req, res) {
     try {
-      const NewConsultation = new ConsultationModel(req, body);
-      const saved = await NewConsultation.save();
+      const newConsultation = new ConsultationModel(req.body);
+      const saved = await newConsultation.save();
       res.status(201).json({
         message: "New Consultation Paket added",
-        consultation: saved,
+        consultation: saved
       });
       res.status(201).send(saved);
     } catch (error) {
       res.status(500).send({ err: error });
-      
     }
   }
 

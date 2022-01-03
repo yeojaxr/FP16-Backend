@@ -9,7 +9,8 @@ const consultationSchema = new mongoose.Schema(
       type: String,
     },
     consultation_schedule: {
-      type: String,
+      type: Date,
+      required: true,
     },
     consultation_paket: {
       type: String,
