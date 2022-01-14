@@ -7,15 +7,13 @@ const UserController = require("../controllers/user.controller");
 const router = express.Router();
 
 const corsOptions = {
-    origin: true, //included origin as true
+    origin: ["https://gocure.netlify.app", "http://localhost:3000"],
     credentials: true, //included credentials as true
-    exposedHeaders: ["set-cookie"],
 };
-
 // router
-router.get("/users", cors(), UserController.getAllUser);
-router.get("/users/:id", cors(), UserController.getUserByID);
-router.patch("/users/:id", cors(), UserController.updateUser);
-router.delete("/users/:id", cors(), UserController.deleteUser);
+router.get("/users", cors(corsOptions), UserController.getAllUser);
+router.get("/users/:id", cors(corsOptions), UserController.getUserByID);
+router.patch("/users/:id", cors(corsOptions), UserController.updateUser);
+router.delete("/users/:id", cors(corsOptions), UserController.deleteUser);
 
 module.exports = router;
