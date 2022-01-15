@@ -254,6 +254,7 @@ const sendToken = (user, statusCode, req, res) => {
   }
 
   user.password = undefined;
+  user.confirm_password = undefined;
   res.status(statusCode).json({
     success: true,
     token,
